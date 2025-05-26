@@ -1,4 +1,5 @@
 // stores/counterStore.ts
+
 import { create } from "zustand";
 
 interface Extension {
