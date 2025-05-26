@@ -1,7 +1,7 @@
 "use client";
 
-import { Navbar } from "./ui/Navbar";
-import { ExtensionList } from "./ui/ExtensionList/ExtensionList";
+import { Navbar } from "@/app/ui/Navbar";
+import { ExtensionList } from "@/app/ui/ExtensionList/ExtensionList";
 import useThemeStore from "@/stores/themeStore";
 
 export default function Home() {
