@@ -35,8 +35,10 @@ export function ExtensionList() {
   });
   return (
     <div className="text-primary ">
-      <div className="flex justify-between items-center">
-        <h1 className="text-xl sm:text-3xl font-bold">Extensions List</h1>
+      <div className="flex justify-between items-center  gap-3">
+        <h1 className="md:text-2xl text-2 font-bold w-32 md:w-fit">
+          Extensions List
+        </h1>
         <div className="flex gap-4 text-sm sm:text-xl">
           <FilterButton label="All" active={filter === "All"} />
           <FilterButton label="Active" active={filter === "Active"} />

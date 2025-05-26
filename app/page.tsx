@@ -11,12 +11,12 @@ export default function Home() {
       className={`main-container theme-${theme} flex items-center justify-center h-screen`}
     >
       <div
-        className={`w-full h-full absolute dark -z-10 ${
+        className={`w-screen h-screen absolute dark -z-10 ${
           theme === "dark" ? "opacity-100" : "opacity-0"
         }`}
       ></div>
       <div
-        className={`w-full h-full absolute light -z-10 ${
+        className={`w-screen h-screen absolute light -z-10 ${
           theme === "light" ? "opacity-100" : "opacity-0"
         }`}
       ></div>
