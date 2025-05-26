@@ -35,7 +35,7 @@ export function ExtensionList() {
   });
   return (
     <div className="text-primary ">
-      <div className="flex justify-between items-center  gap-3">
+      <div className="flex justify-between items-center gap-3 w-full">
         <h1 className="md:text-2xl text-2 font-bold w-32 md:w-fit">
           Extensions List
         </h1>

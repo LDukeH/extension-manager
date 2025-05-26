@@ -20,7 +20,7 @@ export default function Home() {
           theme === "light" ? "opacity-100" : "opacity-0"
         }`}
       ></div>
-      <div className="w-4/5 h-10/12 grid grid-rows-7 ">
+      <div className="w-4/5 h-10/12 grid grid-rows-7 justify-center items-center">
         <div className="row-span-1">
           <Navbar />
         </div>
