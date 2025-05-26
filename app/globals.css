@@ -1,26 +1,123 @@
 @import "tailwindcss";
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  font-size: 16px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.theme-dark {
+  --color-primary: hsl(200, 60%, 99%);
+  --color-secondary: #b9bcc3;
+  --color-bg-primary: #1f2535;
+  --color-bg-secondary: #2f354c;
+  --color-icon-primary: #2f354b;
+  --brightness-primary: 1.4;
+  --color-text-hover: #1f2535;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.theme-light {
+  --color-primary: hsl(227, 75%, 14%);
+  --color-secondary: hsl(226, 25%, 17%);
+  --color-bg-primary: hsl(200, 60%, 99%);
+  --color-icon-primary: #eeeeee;
+  --brightness-primary: 0.75;
+  --color-text-hover: hsl(200, 60%, 99%);
+}
+
+@layer utilities {
+  .hover\:brightness-theme:hover {
+    filter: brightness(var(--brightness-primary));
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.main-container {
+  transition: background-color 0.3s ease-in-out;
+}
+
+.dark {
+  background: linear-gradient(180deg, #040918 0%, #091540 100%);
+  transition: all 0.8s ease;
+}
+
+.light {
+  background: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  transition: all 0.8s ease;
+}
+
+.active {
+  background-color: hsl(3, 71%, 56%);
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 2.8rem;
+  height: 1.5rem;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 99px;
+  box-sizing: border-box;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1rem;
+  width: 1rem;
+  border-radius: 90px;
+  top: 0.25rem;
+  left: 0.2rem;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+input:focus + .slider {
+  outline: var(--color-focus-primary) solid 2px;
+}
+input:checked + .slider {
+  background-color: hsl(3, 86%, 64%);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(1.4rem);
+  -ms-transform: translateX(1.4rem);
+  transform: translateX(1.4em);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+@theme {
+  --color-focus-primary: hsl(3, 71%, 56%);
+  --color-focus-secondary: hsl(3, 77%, 44%);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-bg-primary: var(--color-bg-tertiary);
+  --color-icon-primary: var(--color-icon-primary);
+  --color-text-hover: var(--color-text-hover);
 }
